@@ -16,9 +16,9 @@ Parent commit      : yykpmnuq 2b93da0c (empty) add better documentation
 And then update `src/main.rs` appropriately:
 
 ```rust
-/// A "Hello, world!" program.
-/// 
-/// This is the best implementation of this program to ever exist.
+//! A "Hello, world!" program.
+//! 
+//! This is the best implementation of this program to ever exist.
 
 fn main() {
     print_hello();
@@ -42,9 +42,9 @@ And if we open `src/main.rs` again, we'll see that of course, it's back to the
 state it was before we made our other change:
 
 ```rust
-/// A "Hello, world!" program.
-///
-/// This is the best implementation of this program to ever exist.
+//! A "Hello, world!" program.
+//!
+//! This is the best implementation of this program to ever exist.
 
 fn main() {
     print_hello();
@@ -64,9 +64,9 @@ Let's make a very silly change: our own print function. Edit `src/main.rs` to
 look like this:
 
 ```rust
-/// A "Hello, world!" program.
-/// 
-/// This is the best implementation of this program to ever exist.
+//! A "Hello, world!" program.
+//! 
+//! This is the best implementation of this program to ever exist.
 
 fn main() {
     print("Hello, world!");
@@ -128,16 +128,16 @@ case with one change, it lets us handle the conflict when we're ready. We can
 keep making changes to our current change if we want to:
 
 ```rust
-/// A "Hello, world!" program.
-/// 
-/// This is the best implementation of this program to ever exist.
+//! A "Hello, world!" program.
+//! 
+//! This is the best implementation of this program to ever exist.
 
 fn main() {
     print("Hello, world!");
     print("Goodbye, world!");
 }
 
-// a function that prints a message
+/// a function that prints a message
 fn print(m: &str) {
     println!("{m}")
 }
@@ -190,9 +190,9 @@ Added 0 files, modified 1 files, removed 0 files
 Here's `src/main.rs`:
 
 ```rust
-/// A "Hello, world!" program.
-/// 
-/// This is the best implementation of this program to ever exist.
+//! A "Hello, world!" program.
+//! 
+//! This is the best implementation of this program to ever exist.
 
 fn main() {
 <<<<<<<
@@ -205,7 +205,7 @@ fn main() {
 >>>>>>>
 }
 
-// a function that prints a message
+/// a function that prints a message
 fn print(m: &str) {
     println!("{m}")
 }
@@ -220,15 +220,15 @@ but since that's not the same thing, conflict. To resolve this, we apply our own
 take on the diff to the snapshot:
 
 ```rust
-/// A "Hello, world!" program.
-/// 
-/// This is the best implementation of this program to ever exist.
+//! A "Hello, world!" program.
+//! 
+//! This is the best implementation of this program to ever exist.
 
 fn main() {
     print("Hello, world!");
 }
 
-// a function that prints a message
+/// a function that prints a message
 fn print(m: &str) {
     println!("{m}")
 }

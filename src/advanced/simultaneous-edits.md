@@ -158,6 +158,11 @@ Whew! What a change! Five parents. Let's create an extra one so we can use our
 squash-style workflow more easily: we temporarily work on a `@` change, and then
 `jj squash` diffs back into whichever parent makes the most sense.
 
+<!-- TODO(jeffs): I was already so overwhelmed at this point that I didn't
+  -- explore `absorb`. It probably merits its own section _after_ the explicit
+  -- rebasing is covered.
+  -->
+
 > **Tip: `jj absorb` — redistribute edits back into the right branches.**
 > When your working copy (`@`) contains edits that belong to multiple PRs, `jj absorb` will push those edits into the nearest mutable ancestors instead of you manually splitting and rebase-ing.
 > Example:
@@ -280,6 +285,15 @@ happen:
 ~
 ```
 
+<!-- TODO(jeffs): This didn't work as I expected, and I'm not sure what I did wrong.
+  -- I was able to `jj undo` and get to the same point "on my own." I think maybe all that's missing is moving bookmark #4 after the new commit is added to its branch.
+  --
+  -- ... 
+  --
+  -- D'oh, I just realized you're not using bookmarks for these at all. That's why you keep referring to them by change ID. I think that's too tough for me to follow; I need these things to have semantic names, like pr1, pr2, etc.
+  -->
+
+
 We're back to our beautiful tree, though our `@` working commit got lost in the
 shuffle. It was empty anyway! Let's bring it back:
 
@@ -349,6 +363,8 @@ After fetching changes, our log looks like this:
 ~
 ```
 
+<-- TODO(jeffs): I was unable to reproduce the `??`. I somehow got it earlier by accident, but Mr. Magooed my way around it. -->
+
 Uh oh! That's got some concerning stuff. The changes with `??` and are in red,
 and there's also the new merge commit that `trunk` is set up to. Since all of
 our branches were off of the change where `trunk` used to be, we should rebase
@@ -364,6 +380,12 @@ Rebased 14 commits
 Working copy now at: ltupzukw 9a496ef6 (empty) (no description set)
 Parent commit      : xnutwmso 6be25a32 (empty) merge: steve's branch
 ```
+
+<!-- TODO(jeffs): Remove all:
+  --
+  --    Multiple revisions are allowed by default; `all:` is planned for removal
+  --
+  -->
 
 This is using some revset stuff we haven't seen before! Let's break it down:
 

@@ -8,6 +8,8 @@ A bunch of commands support `-T` or `--template` to allow you to customize their
 output. For example, right now `@` is on an empty commit, so let's refresh
 ourselves on what 
 
+<!-- TODO(jeffs): On what what? -->
+
 ```text
 $ jj log -r @-
 ◉  yzlysuwt steve@steveklabnik.com 2024-02-29 00:35:12.000 -06:00 main f80a73c1

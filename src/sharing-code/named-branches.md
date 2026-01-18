@@ -31,8 +31,8 @@ revision or use it in a revset if we'd like:
 ~
 ```
 
-One interesting thing about branches in `jj` that's different than branches
-in `git` is that branches do not automatically move. For example, let's make a
+One interesting thing about bookmarks in `jj` that's different than branches
+in `git` is that bookmarks do not automatically move. For example, let's make a
 new change:
 
 ```console
